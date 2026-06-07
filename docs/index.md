@@ -25,11 +25,11 @@ to get these projects running on your machine.
 
 **File:** `src/streaming/kafka_consumer_teja.py`
 
-**Scenario:** Extend the case example with two side-by-side live charts —
+**Scenario:** Extend the Dr. Case example with two side-by-side live charts —
 one showing the pre-tax sale value per message, and one showing which
 regions generate the most revenue as the stream runs.
 
-### What changed from the case example
+### What changed from the Dr. Case example
 
 The single chart was replaced with **two side-by-side charts** using
 `plt.subplots(1, 2)`:
@@ -127,7 +127,7 @@ the full processing pipeline:
 
 **Phase 4 — Technical Modification:**
 Changed the live chart to plot `subtotal` (pre-tax amount) instead of `total`.
-This required overriding `update_live_chart` from the case module with a local
+This required overriding `update_live_chart` from the Dr. Case module with a local
 version that reads `message["subtotal"]` instead of `message["total"]`.
 Chart title and y-axis label were updated to reflect the change.
 
@@ -159,7 +159,7 @@ When the producer and consumer were run together:
 ### Interpretation
 
 **What changed from the original example:**
-The case consumer displayed a single line chart of `total` per message.
+The Dr. Case consumer displayed a single line chart of `total` per message.
 The modified consumer (`kafka_consumer_teja.py`) shows `subtotal` (pre-tax)
 in Chart 1, making it possible to see the raw sale value before regional tax
 is applied — which varies from 8.25% (US-TX) to 14.975% (CA-QC).
